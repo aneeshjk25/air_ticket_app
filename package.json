@@ -1,0 +1,16 @@
+{
+  "name": "air_ticket_app",
+  "version": "1.0.0",
+  "description": "Air ticketing web app built using angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/aneesh_25/air_ticket_app.git"
+  },
+  "author": "Aneesh Kallarakkal",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/aneesh_25/air_ticket_app#readme"
+}

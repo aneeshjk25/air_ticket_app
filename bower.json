@@ -1,0 +1,25 @@
+{
+  "name": "air_ticket_app",
+  "description": "Air ticketing web app built using angular",
+  "main": "index.js",
+  "authors": [
+    "Aneesh Kallarakkal"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "angular": "~1.5.2",
+    "requirejs": "~2.2.0",
+    "requirejs-plugins": "~1.0.3"
+  }
+}
