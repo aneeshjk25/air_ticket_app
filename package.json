@@ -12,5 +12,8 @@
   },
   "author": "Aneesh Kallarakkal",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/aneesh_25/air_ticket_app#readme"
+  "homepage": "https://bitbucket.org/aneesh_25/air_ticket_app#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }

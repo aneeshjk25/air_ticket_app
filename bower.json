@@ -20,6 +20,9 @@
     "jquery": "^2.2.2",
     "angular": "~1.5.2",
     "requirejs": "~2.2.0",
-    "requirejs-plugins": "~1.0.3"
+    "requirejs-plugins": "~1.0.3",
+    "underscore": "~1.8.3",
+    "restangular": "~1.5.2",
+    "ui-router": "~0.2.18"
   }
 }
