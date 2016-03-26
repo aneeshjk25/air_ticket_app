@@ -6,6 +6,7 @@ require.config({
 		underscore: 'underscore/underscore',
 		'angular-ui-router' : '../ui-router/release/angular-ui-router',
 		restangular : '../restangular/src/restangular',
+		'angular-bootstrap' : '../angular-bootstrap/ui-bootstrap-tpls',
 		text 	:  'requirejs-plugins/lib/text',
 		json    :  'requirejs-plugins/src/json',
 		core    :  'config/core',
