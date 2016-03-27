@@ -26,7 +26,8 @@
     "ui-router": "~0.2.18",
     "bootstrap": "~3.3.6",
     "angular-bootstrap": "~1.2.5",
-    "moment": "~2.12.0"
+    "moment": "~2.12.0",
+    "angular-messages": "~1.5.3"
   },
   "resolutions": {
     "angular": "~1.5.2"

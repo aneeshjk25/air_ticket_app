@@ -45,16 +45,17 @@ define(['moment'],function(moment){
 		};
 
 		$scope.doSearch = function(form,data){
-			var request_params = { 
-				to : data.to.ac,
-				from : data.from.ac,
-				date : moment(data.date).format('YYYY-MM-DD'),
-				passenger: data.passenger,
-			};
-			request_params.max_price = data.maxPrice;
-			request_params.currency  = data.currency;
-			$state.go('flights_search',request_params);
-
+			if(form.$valid === true){
+				var request_params = { 
+					to : data.to.ac,
+					from : data.from.ac,
+					date : moment(data.date).format('YYYY-MM-DD'),
+					passenger: data.passenger,
+				};
+				request_params.max_price = data.maxPrice;
+				request_params.currency  = data.currency;
+				$state.go('flights_search',request_params);				
+			}
 		};
 
 

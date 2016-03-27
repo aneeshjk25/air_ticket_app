@@ -8,7 +8,12 @@
 			      autocomplete="off" 
 				  typeahead-wait-ms="400"
 				  typeahead-min-length="2"
-				  uib-typeahead="r as r.an for r in  airportSearch($viewValue)"/>
+				  uib-typeahead="r as r.an for r in  airportSearch($viewValue)"
+				  autocomplete-required 
+				  required="" />
+				<span ng-messages="searchForm.from.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>			
 			</div>
 			<div class="col-sm-6">
 				<label>To</label>
@@ -16,7 +21,12 @@
 				  autocomplete="off" 
 				  typeahead-wait-ms="400"
 				  typeahead-min-length="2"
-				  uib-typeahead="r as r.an for r in  airportSearch($viewValue)" />
+				  uib-typeahead="r as r.an for r in  airportSearch($viewValue)" 
+  				  autocomplete-required 
+				  required="" />
+				<span ng-messages="searchForm.to.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>				  
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -27,12 +37,20 @@
 				<input type="text" name="date" ng-model="search.date" class="form-control" placeholder="Enter your date of journey" 
 				ng-click="open('dateOpen')"
 				is-open="dateMap.dateOpen"
-				uib-datepicker-popup=""/>
+				uib-datepicker-popup="" 
+				required="" />
+				<span ng-messages="searchForm.date.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>
 			</div>
 			<div class="col-sm-6">
 				<label>Passengers</label>
-				<select class="form-control" ng-options="r.value as r.name for r in lists.recordPassengers" ng-model="search.passenger" name="passenger">
+				<select class="form-control" ng-options="r.value as r.name for r in lists.recordPassengers" ng-model="search.passenger" name="passenger"
+					required="">
 				</select>
+				<span ng-messages="searchForm.passenger.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>					
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -51,6 +69,9 @@
 					ng-required="search.maxPrice"
 				>
 				</select>
+				<span ng-messages="searchForm.currency.$error" ng-if="searchForm.$submitted" >
+					<span ng-messages-include="/error-messages.html"></span>
+				</span>				
 			</div>
 		</div>
 		<button class="btn btn-special">
