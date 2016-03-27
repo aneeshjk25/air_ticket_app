@@ -8,7 +8,7 @@
 			      autocomplete="off" 
 				  typeahead-wait-ms="400"
 				  typeahead-min-length="2"
-				  uib-typeahead="r as r.an for r in  airportSearch($viewValue)"
+				  uib-typeahead="r as (r.ct + ', ' + r.cc + '-' + r.an + '('+r.ac + ')') for r in  airportSearch($viewValue)"
 				  autocomplete-required 
 				  required="" />
 				<span ng-messages="searchForm.from.$error" ng-if="searchForm.$submitted" >
@@ -21,7 +21,7 @@
 				  autocomplete="off" 
 				  typeahead-wait-ms="400"
 				  typeahead-min-length="2"
-				  uib-typeahead="r as r.an for r in  airportSearch($viewValue)" 
+				  uib-typeahead="r as (r.ct + ', ' + r.cc + '-' + r.an + '('+r.ac + ')') for r in  airportSearch($viewValue)" 
   				  autocomplete-required 
 				  required="" />
 				<span ng-messages="searchForm.to.$error" ng-if="searchForm.$submitted" >
