@@ -7,7 +7,7 @@ define(function(){
 			link 	: function(scope,element,attrs,ctrl){
 				scope.$watch(attrs.ngModel,function(n){
 					if(pool){
-						console.log($timeout.cancel(pool));
+						$timeout.cancel(pool);
 						pool = null;
 					}
 					pool = $timeout(function(){
