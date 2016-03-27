@@ -4,6 +4,7 @@ body{
   background: #f9f9f9;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 17px;
+  line-height: 18px;
 }
 
 .btn-special{
@@ -49,4 +50,34 @@ label{
 .form input:-moz-placeholder { text-align:right; }
 *, *:before, *:after {
   box-sizing: border-box;
+}
+.sm-text{
+  font-size: 12px;
+}
+.xs-text{
+  font-size: 10px;
+}
+.faint-text{
+  color: #859DB7;
+}
+.left-text{
+  text-align: left;
+}
+.right-text{
+  text-align: right;
+}
+.center-text{
+  text-align: center;
+}
+.card p {
+  line-height: 17px;
+}
+@media screen and (max-width: 768px){
+  .left-text,.right-text{
+    text-align: center;
+  }
+  carrier-logo img{
+    width: 140px;
+    margin: auto;
+  }
 }

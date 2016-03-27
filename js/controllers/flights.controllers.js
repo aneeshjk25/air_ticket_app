@@ -1,15 +1,18 @@
-define(function(){
+define(['moment'],function(moment){
 	var module = angular.module('app.core.flights.controllers',[]);
 
 	var DateController = function($scope){
+
 		$scope.dateMap = {
 
 		};
 		$scope.open = function(key){
 			$scope.dateMap[key] = !$scope.dateMap[key];
 		};
+
 	};
-	module.controller('FlightsSearchController',['$scope','FlightsServices','AirportsServices',function($scope,FlightsServices,AirportsServices){
+	module.controller('FlightsSearchController',['$scope','$state' ,'FlightsServices','AirportsServices',function($scope,$state,FlightsServices,AirportsServices){
+
 		$scope.search = {
 			passenger : '1'
 		};
@@ -23,7 +26,11 @@ define(function(){
 			{ name : '6' , value : '6' },
 			{ name : '7' , value : '7' }
 		];
+
+
 		angular.extend(this, new DateController($scope));
+
+
 		$scope.airportSearch = function(value){
 			return AirportsServices.search(value).then(function(response){
 				return response;
@@ -31,8 +38,44 @@ define(function(){
 		};
 
 		$scope.doSearch = function(form,data){
+			console.log(data);
+			$state.go('flights_search',{ 
+				to : data.to.ac,
+				from : data.from.ac,
+				date : moment(data.date).format('YYYY-MM-DD'),
+				passenger: data.passenger
+			});
 
 		};
 
+
+	}]);
+
+	module.controller('FlightsListController',['$scope','$state','$stateParams','FlightsServices',function($scope,$state,$stateParams,FlightsServices){
+		var searchParams = {
+			request : {
+				passengers : {
+					adultCount : $stateParams.passenger
+				},
+				slice : [
+					{
+						origin : $stateParams.from,
+						destination : $stateParams.to,
+						date : $stateParams.date
+					}
+				]				
+			}
+		};
+		$scope.trips = {};
+		FlightsServices.search(searchParams).then(function(response){
+			$scope.flightData = response;
+			$scope.trips.flights = response.trips.tripOption;
+		});
+		$scope.getCarrierName = function(carrier_code){
+			return FlightsServices.getCarrierName($scope.flightData,carrier_code);
+		};
+		$scope.getAirportName = function(airport_code){
+			return FlightsServices.getAirportName($scope.flightData,airport_code);
+		};		
 	}]);
 });

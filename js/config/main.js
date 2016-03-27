@@ -7,6 +7,7 @@ require.config({
 		'angular-ui-router' : '../ui-router/release/angular-ui-router',
 		restangular : '../restangular/src/restangular',
 		'angular-bootstrap' : '../angular-bootstrap/ui-bootstrap-tpls',
+		moment : '../moment/moment',
 		text 	:  'requirejs-plugins/lib/text',
 		json    :  'requirejs-plugins/src/json',
 		core    :  'config/core',
@@ -16,6 +17,7 @@ require.config({
 	shim    : {
 		jQuery : { exports : 'jQuery' },
 		angular: { exports : 'angular' , 'deps' : ['jQuery']},
+		moment : { exports : 'moment',deps : ['angular']},
 		libs : { deps : ['angular']},
 		core : { deps : ['angular','libs']},
 		underscore : { exports : 'underscore' },
@@ -23,7 +25,8 @@ require.config({
 		restangular : { deps : ['angular']},
 		app : { deps : ['angular','core','libs']},
 
-	}
+	},
+	waitSeconds : 0
 });
 require(['jQuery','angular','app'],function($,angular){
 	$(function(){

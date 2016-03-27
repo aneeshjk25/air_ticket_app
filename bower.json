@@ -25,7 +25,8 @@
     "restangular": "~1.5.2",
     "ui-router": "~0.2.18",
     "bootstrap": "~3.3.6",
-    "angular-bootstrap": "~1.2.5"
+    "angular-bootstrap": "~1.2.5",
+    "moment": "~2.12.0"
   },
   "resolutions": {
     "angular": "~1.5.2"
