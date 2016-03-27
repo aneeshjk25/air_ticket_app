@@ -83,6 +83,8 @@ define(['moment'],function(moment){
 		FlightsServices.search(searchParams).then(function(response){
 			$scope.flightData = response;
 			$scope.trips.flights = response.trips.tripOption;
+		},function(response){
+			alert("Failed to load data");
 		});
 		$scope.getCarrierName = function(carrier_code){
 			return FlightsServices.getCarrierName($scope.flightData,carrier_code);
