@@ -31,5 +31,6 @@ require.config({
 require(['jQuery','angular','app'],function($,angular){
 	$(function(){
 		angular.bootstrap(document,['app']);
+		$('.loader').hide();
 	});
 });

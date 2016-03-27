@@ -72,6 +72,19 @@ label{
 .card p {
   line-height: 17px;
 }
+
+.loader{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position : fixed;
+  background: white;
+}
+.loader img{
+  position: absolute;
+  left: 45%;
+  top: 30%;
+}
 @media screen and (max-width: 768px){
   .left-text,.right-text{
     text-align: center;

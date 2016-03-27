@@ -7,5 +7,6 @@ app.use(express.static(__dirname + '/js'));
 app.use(express.static(__dirname + '/css'));
 app.use(express.static(__dirname + '/partials'));
 app.use(express.static(__dirname + '/env' ));
+app.use(express.static(__dirname + '/resources' ));
 
 app.listen(port);
