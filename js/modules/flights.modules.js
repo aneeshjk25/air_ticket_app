@@ -7,7 +7,7 @@ define(['../controllers/flights.controllers','../services/flights.services','../
 			controller : 'FlightsSearchController'
 		}).
 		state('flights_search',{
-			url : '/flights_search/:to/:from/:date/:passenger?max_price&currency',
+			url : '/flights_search/:from/:to/:date/:passenger?max_price&currency',
 			templateUrl : '../../flights/list.html',
 			controller : 'FlightsListController'
 		});
