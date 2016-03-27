@@ -39,8 +39,18 @@
 
 
 		<div class="form-group">
-			<div class="col-md-12">
-
+			<div class="col-sm-6">
+				<label>Max Price</label>
+				<input type="number" class="form-control" name="maxPrice" ng-model="search.maxPrice"
+				  placeholder="Please enter your price limit (Optional)" 
+				 />
+			</div>
+			<div class="col-sm-6">
+				<label>Currency</label>
+				<select class="form-control" ng-options="r.value as r.name for r in lists.recordCurrencies" ng-model="search.currency" name="currency"
+					ng-required="search.maxPrice"
+				>
+				</select>
 			</div>
 		</div>
 		<button class="btn btn-special">

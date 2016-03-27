@@ -26,6 +26,13 @@ define(['moment'],function(moment){
 			{ name : '6' , value : '6' },
 			{ name : '7' , value : '7' }
 		];
+		$scope.lists.recordCurrencies = [
+			{ name : 'USD' , value : 'USD'},
+			{ name : 'INR' , value : 'INR'},
+			{ name : 'EUR' , value : 'EUR'},
+			{ name : 'GBP' , value : 'GBP'},
+			{ name : 'JPY' , value : 'JPY'}
+		];
 
 
 		angular.extend(this, new DateController($scope));
@@ -38,13 +45,15 @@ define(['moment'],function(moment){
 		};
 
 		$scope.doSearch = function(form,data){
-			console.log(data);
-			$state.go('flights_search',{ 
+			var request_params = { 
 				to : data.to.ac,
 				from : data.from.ac,
 				date : moment(data.date).format('YYYY-MM-DD'),
-				passenger: data.passenger
-			});
+				passenger: data.passenger,
+			};
+			request_params.max_price = data.maxPrice;
+			request_params.currency  = data.currency;
+			$state.go('flights_search',request_params);
 
 		};
 
@@ -66,6 +75,9 @@ define(['moment'],function(moment){
 				]				
 			}
 		};
+		if($stateParams.max_price && $stateParams.currency){
+			searchParams.request.maxPrice = $stateParams.currency + $stateParams.max_price;
+		}
 		$scope.trips = {};
 		FlightsServices.search(searchParams).then(function(response){
 			$scope.flightData = response;
