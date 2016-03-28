@@ -16,7 +16,7 @@
 				</td>
 				<td>
 					<p style="margin-bottom: 0px" formatted-time="flight.getDepartureDate()" format="'HH:mm'"></p>
-					<span class="xs-text faint-text" ng-bind="flight.getStops().join('-')"></span>
+					<p class="xs-text faint-text hidden-xs " ng-bind="flight.getStops().join('-')"></p>
 				</td>
 				<td>
 					<p style="margin-bottom: 0px" formatted-time="flight.getArrivalDate()" format="'HH:mm'"></p>
@@ -28,9 +28,14 @@
 						<p style="margin-bottom: 0px">{{ ::(flight.getSaleTotal().amount) | number }}</p>
 						<span class="xs-text" ng-bind="flight.getSaleTotal().currency"></span>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 hidden-xs">
 						<button class="btn-special" type="button" ng-click="flight.show = !flight.show">Book</button>
 					</div>
+				</td>
+			</tr>
+			<tr class="hidden-sm hidden-md hidden-lg">
+				<td colspan="4">
+						<button style="width: 90%" class="btn-special" type="button" ng-click="flight.show = !flight.show">Book</button>
 				</td>
 			</tr>
 			<tr ng-if="flight.show" flight-detail ng-repeat="leg in flight.getLegs()">
