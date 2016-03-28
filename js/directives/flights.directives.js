@@ -12,7 +12,6 @@ define(['moment'],function(moment){
 	module.directive('carrierLogo',function(){
 		return {
 			templateUrl : '../../flights/carrier-logo.html',
-			// scope : true,
 			link : function(scope,element,attrs){
 				scope.imageUrl = 'http://pics.avs.io/140/70/'+attrs.imageUrl+'.png';
 			}

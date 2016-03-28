@@ -4,12 +4,18 @@ define(['../controllers/flights.controllers','../services/flights.services','../
 		$stateProvider.state('flights',{
 			url : '/flights',
 			templateUrl : '../../flights/search.html',
-			controller : 'FlightsSearchController'
+			controller : 'FlightsSearchController',
+			data : {
+				pageTitle : 'Search Flights'
+			}
 		}).
 		state('flights_search',{
 			url : '/flights_search/:from/:to/:date/:passenger?max_price&currency',
 			templateUrl : '../../flights/list.html',
-			controller : 'FlightsListController'
+			controller : 'FlightsListController',
+			data : {
+				pageTitle : ' List of Flights'
+			}
 		});
 	}]);
 });
